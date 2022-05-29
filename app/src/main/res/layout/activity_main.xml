@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+<!--    LANES    -->
+
+    <ImageView
+        android:id="@+id/top_sum2"
+        android:layout_width="86dp"
+        android:layout_height="86dp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintStart_toEndOf="@+id/top_sum1"
+        app:layout_constraintTop_toTopOf="@+id/top_icon" />
+
+    <ImageView
+        android:id="@+id/sup_sum2"
+        android:layout_width="86dp"
+        android:layout_height="86dp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintStart_toEndOf="@+id/sup_sum1"
+        app:layout_constraintTop_toTopOf="@+id/sup_icon" />
+
+    <ImageView
+        android:id="@+id/mid_sum2"
+        android:layout_width="86dp"
+        android:layout_height="86dp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintStart_toEndOf="@+id/mid_sum1"
+        app:layout_constraintTop_toTopOf="@+id/mid_icon" />
+
+    <ImageView
+        android:id="@+id/jungle_sum2"
+        android:layout_width="86dp"
+        android:layout_height="86dp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintStart_toEndOf="@+id/jungle_sum1"
+        app:layout_constraintTop_toTopOf="@+id/jungle_icon" />
+
+    <ImageView
+        android:id="@+id/bot_sum2"
+        android:layout_width="86dp"
+        android:layout_height="86dp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintStart_toEndOf="@+id/bot_sum1"
+        app:layout_constraintTop_toTopOf="@+id/bot_icon" />
+
+    <ImageView
+        android:id="@+id/top_icon"
+        android:layout_width="86dp"
+        android:layout_height="86dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/top_icon" />
+
+    <ImageView
+        android:id="@+id/jungle_icon"
+        android:layout_width="86dp"
+        android:layout_height="86dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_icon"
+        app:srcCompat="@drawable/jungle_icon" />
+
+    <ImageView
+        android:id="@+id/mid_icon"
+        android:layout_width="86dp"
+        android:layout_height="86dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jungle_icon"
+        app:srcCompat="@drawable/middle_icon" />
+
+    <ImageView
+        android:id="@+id/sup_icon"
+        android:layout_width="86dp"
+        android:layout_height="86dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mid_icon"
+        app:srcCompat="@drawable/support_icon" />
+
+    <ImageView
+        android:id="@+id/bot_icon"
+        android:layout_width="86dp"
+        android:layout_height="86dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sup_icon"
+        app:srcCompat="@drawable/bottom_icon" />
+
+<!--    SUMMONER SPELLS    -->
+
+    <ImageView
+        android:id="@+id/top_sum1"
+        android:layout_width="86dp"
+        android:layout_height="86dp"
+        android:layout_marginStart="50dp"
+        app:layout_constraintStart_toEndOf="@+id/top_icon"
+        app:layout_constraintTop_toTopOf="@+id/top_icon" />
+
+    <ImageView
+        android:id="@+id/jungle_sum1"
+        android:layout_width="86dp"
+        android:layout_height="86dp"
+        android:layout_marginStart="50dp"
+        app:layout_constraintStart_toEndOf="@+id/jungle_icon"
+        app:layout_constraintTop_toTopOf="@+id/jungle_icon" />
+
+    <ImageView
+        android:id="@+id/mid_sum1"
+        android:layout_width="86dp"
+        android:layout_height="86dp"
+        android:layout_marginStart="50dp"
+        app:layout_constraintStart_toEndOf="@+id/mid_icon"
+        app:layout_constraintTop_toTopOf="@+id/mid_icon" />
+
+    <ImageView
+        android:id="@+id/sup_sum1"
+        android:layout_width="86dp"
+        android:layout_height="86dp"
+        android:layout_marginStart="50dp"
+        app:layout_constraintStart_toEndOf="@+id/sup_icon"
+        app:layout_constraintTop_toTopOf="@+id/sup_icon" />
+
+    <ImageView
+        android:id="@+id/bot_sum1"
+        android:layout_width="86dp"
+        android:layout_height="86dp"
+        android:layout_marginStart="50dp"
+        app:layout_constraintStart_toEndOf="@+id/bot_icon"
+        app:layout_constraintTop_toTopOf="@+id/bot_icon" />
+</androidx.constraintlayout.widget.ConstraintLayout>
