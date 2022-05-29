@@ -18,28 +18,28 @@ public class MyModel extends ViewModel {
 
     public LiveData<Lane> getJgl() {
         if(jgl == null){
-            jgl = new MutableLiveData<Lane>();
+            jgl = new MutableLiveData<Lane>(new Lane());
         }
         return jgl;
     }
 
     public LiveData<Lane> getMid() {
         if(mid == null){
-            mid = new MutableLiveData<Lane>();
+            mid = new MutableLiveData<Lane>(new Lane());
         }
         return mid;
     }
 
     public LiveData<Lane> getSup() {
         if(sup == null){
-            sup = new MutableLiveData<Lane>();
+            sup = new MutableLiveData<Lane>(new Lane());
         }
         return sup;
     }
 
     public LiveData<Lane> getBot() {
         if(bot == null){
-            bot = new MutableLiveData<Lane>();
+            bot = new MutableLiveData<Lane>(new Lane());
         }
         return bot;
     }

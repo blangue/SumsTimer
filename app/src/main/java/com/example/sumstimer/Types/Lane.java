@@ -1,7 +1,7 @@
 package com.example.sumstimer.Types;
 
 public class Lane {
-    private enum LaneType {TOP, JUNGLE, MID, SUPPORT, BOTTOM}
+    public enum LaneType {TOP, JUNGLE, MID, SUPPORT, BOTTOM}
     LaneType laneType;
     Sum sum1, sum2;
 
