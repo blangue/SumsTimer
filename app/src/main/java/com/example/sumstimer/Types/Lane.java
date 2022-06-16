@@ -1,3 +1,11 @@
+/*
+ * *
+ *  * Created by bastien on 16/06/2022 20:14
+ *  * Copyright (c) 2022 . All rights reserved.
+ *  * Last modified 16/06/2022 20:03
+ *
+ */
+
 package com.example.sumstimer.Types;
 
 public class Lane {

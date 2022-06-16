@@ -1,11 +1,13 @@
+/*
+ * *
+ *  * Created by bastien on 16/06/2022 20:14
+ *  * Copyright (c) 2022 . All rights reserved.
+ *  * Last modified 16/06/2022 20:12
+ *
+ */
+
 package com.example.sumstimer;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProvider;
-
-import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
@@ -17,7 +19,11 @@ import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
-import com.example.sumstimer.Types.Lane;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
+
 import com.example.sumstimer.Types.Sum;
 import com.example.sumstimer.Types.SumImage;
 

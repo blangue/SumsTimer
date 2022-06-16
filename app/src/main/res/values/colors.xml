@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /**
+  ~  * Created by bastien on 16/06/2022 20:14
+  ~  * Copyright (c) 2022 . All rights reserved.
+  ~  * Last modified 29/05/2022 18:16
+  ~  */
+  -->
+
 <resources>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
