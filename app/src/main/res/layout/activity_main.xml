@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-<!--    LANES    -->
+    <!--    LANES    -->
 
     <ImageView
         android:id="@+id/top_sum2"
@@ -98,7 +98,7 @@
         app:layout_constraintTop_toBottomOf="@+id/sup_icon"
         app:srcCompat="@drawable/bottom_icon" />
 
-<!--    SUMMONER SPELLS    -->
+    <!--    SUMMONER SPELLS    -->
 
     <ImageView
         android:id="@+id/top_sum1"
@@ -139,4 +139,95 @@
         android:layout_marginStart="50dp"
         app:layout_constraintStart_toEndOf="@+id/bot_icon"
         app:layout_constraintTop_toTopOf="@+id/bot_icon" />
+
+    <TextView
+        android:id="@+id/timer_mid_sum1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/mid_sum1"
+        app:layout_constraintEnd_toEndOf="@+id/mid_sum1"
+        app:layout_constraintStart_toStartOf="@+id/mid_sum1"
+        app:layout_constraintTop_toTopOf="@+id/mid_sum1" />
+
+    <TextView
+        android:id="@+id/timer_sup_sum2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/sup_sum2"
+        app:layout_constraintEnd_toEndOf="@+id/sup_sum2"
+        app:layout_constraintStart_toStartOf="@+id/sup_sum2"
+        app:layout_constraintTop_toTopOf="@+id/sup_sum2" />
+
+    <TextView
+        android:id="@+id/timer_jgl_sum1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/jungle_sum1"
+        app:layout_constraintEnd_toEndOf="@+id/jungle_sum1"
+        app:layout_constraintStart_toStartOf="@+id/jungle_sum1"
+        app:layout_constraintTop_toTopOf="@+id/jungle_sum1" />
+
+    <TextView
+        android:id="@+id/timer_mid_sum2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/mid_sum2"
+        app:layout_constraintEnd_toEndOf="@+id/mid_sum2"
+        app:layout_constraintStart_toStartOf="@+id/mid_sum2"
+        app:layout_constraintTop_toTopOf="@+id/mid_sum2" />
+
+    <TextView
+        android:id="@+id/timer_bot_sum2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/bot_sum2"
+        app:layout_constraintEnd_toEndOf="@+id/bot_sum2"
+        app:layout_constraintStart_toStartOf="@+id/bot_sum2"
+        app:layout_constraintTop_toTopOf="@+id/bot_sum2" />
+
+    <TextView
+        android:id="@+id/timer_sup_sum1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/sup_sum1"
+        app:layout_constraintEnd_toEndOf="@+id/sup_sum1"
+        app:layout_constraintStart_toStartOf="@+id/sup_sum1"
+        app:layout_constraintTop_toTopOf="@+id/sup_sum1" />
+
+    <TextView
+        android:id="@+id/timer_bot_sum1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/bot_sum1"
+        app:layout_constraintEnd_toEndOf="@+id/bot_sum1"
+        app:layout_constraintStart_toStartOf="@+id/bot_sum1"
+        app:layout_constraintTop_toTopOf="@+id/bot_sum1" />
+
+    <TextView
+        android:id="@+id/timer_jgl_sum2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/jungle_sum2"
+        app:layout_constraintEnd_toEndOf="@+id/jungle_sum2"
+        app:layout_constraintStart_toStartOf="@+id/jungle_sum2"
+        app:layout_constraintTop_toTopOf="@+id/jungle_sum2" />
+
+    <TextView
+        android:id="@+id/timer_top_sum1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/top_sum1"
+        app:layout_constraintEnd_toEndOf="@+id/top_sum1"
+        app:layout_constraintStart_toStartOf="@+id/top_sum1"
+        app:layout_constraintTop_toTopOf="@+id/top_sum1" />
+
+    <TextView
+        android:id="@+id/timer_top_sum2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/top_sum2"
+        app:layout_constraintEnd_toEndOf="@+id/top_sum2"
+        app:layout_constraintStart_toStartOf="@+id/top_sum2"
+        app:layout_constraintTop_toTopOf="@+id/top_sum2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

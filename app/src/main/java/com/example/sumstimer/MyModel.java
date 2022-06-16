@@ -1,5 +1,7 @@
 package com.example.sumstimer;
 
+import static com.example.sumstimer.Types.Lane.LaneType.*;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -11,35 +13,35 @@ public class MyModel extends ViewModel {
 
     public LiveData<Lane> getTop() {
         if(top == null){
-            top = new MutableLiveData<Lane>(new Lane());
+            top = new MutableLiveData<Lane>(new Lane(TOP));
         }
         return top;
     }
 
     public LiveData<Lane> getJgl() {
         if(jgl == null){
-            jgl = new MutableLiveData<Lane>(new Lane());
+            jgl = new MutableLiveData<Lane>(new Lane(JUNGLE));
         }
         return jgl;
     }
 
     public LiveData<Lane> getMid() {
         if(mid == null){
-            mid = new MutableLiveData<Lane>(new Lane());
+            mid = new MutableLiveData<Lane>(new Lane(MID));
         }
         return mid;
     }
 
     public LiveData<Lane> getSup() {
         if(sup == null){
-            sup = new MutableLiveData<Lane>(new Lane());
+            sup = new MutableLiveData<Lane>(new Lane(SUPPORT));
         }
         return sup;
     }
 
     public LiveData<Lane> getBot() {
         if(bot == null){
-            bot = new MutableLiveData<Lane>(new Lane());
+            bot = new MutableLiveData<Lane>(new Lane(BOTTOM));
         }
         return bot;
     }

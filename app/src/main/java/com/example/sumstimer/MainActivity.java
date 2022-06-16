@@ -3,99 +3,145 @@ package com.example.sumstimer;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.DialogInterface;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
-import android.widget.Switch;
 import android.widget.TextView;
 
 import com.example.sumstimer.Types.Lane;
 import com.example.sumstimer.Types.Sum;
+import com.example.sumstimer.Types.SumImage;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
-    ImageView topSum1, topSum2, jungleSum1, jungleSum2, midSum1, midSum2, supSum1, supSum2, botSum1, botSum2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        topSum1 = findViewById(R.id.top_sum1);
-        topSum2 = findViewById(R.id.top_sum2);
-        jungleSum1 = findViewById(R.id.jungle_sum1);
-        jungleSum2 = findViewById(R.id.jungle_sum2);
-        midSum1 = findViewById(R.id.mid_sum1);
-        midSum2 = findViewById(R.id.mid_sum2);
-        supSum1 = findViewById(R.id.sup_sum1);
-        supSum2 = findViewById(R.id.sup_sum2);
-        botSum1 = findViewById(R.id.bot_sum1);
-        botSum2 = findViewById(R.id.bot_sum2);
+        SumImage top1 = new SumImage(getApplicationContext());
+        SumImage top2 = new SumImage(getApplicationContext());
+        SumImage jungle1 = new SumImage(getApplicationContext());
+        SumImage jungle2 = new SumImage(getApplicationContext());
+        SumImage mid1 = new SumImage(getApplicationContext());
+        SumImage mid2 = new SumImage(getApplicationContext());
+        SumImage sup1 = new SumImage(getApplicationContext());
+        SumImage sup2 = new SumImage(getApplicationContext());
+        SumImage bot1 = new SumImage(getApplicationContext());
+        SumImage bot2 = new SumImage(getApplicationContext());
+
+        top1.image = findViewById(R.id.top_sum1);
+        top2.image = findViewById(R.id.top_sum2);
+        jungle1.image = findViewById(R.id.jungle_sum1);
+        jungle2.image = findViewById(R.id.jungle_sum2);
+        mid1.image = findViewById(R.id.mid_sum1);
+        mid2.image = findViewById(R.id.mid_sum2);
+        sup1.image = findViewById(R.id.sup_sum1);
+        sup2.image = findViewById(R.id.sup_sum2);
+        bot1.image = findViewById(R.id.bot_sum1);
+        bot2.image = findViewById(R.id.bot_sum2);
+        top1.text = findViewById( R.id.timer_top_sum1);
+        top2.text = findViewById(R.id.timer_top_sum2);
+        jungle1.text = findViewById(R.id.timer_jgl_sum1);
+        jungle2.text = findViewById(R.id.timer_jgl_sum2);
+        mid1.text = findViewById(R.id.timer_mid_sum1);
+        mid2.text = findViewById(R.id.timer_mid_sum2);
+        sup1.text = findViewById(R.id.timer_sup_sum1);
+        sup2.text = findViewById(R.id.timer_sup_sum2);
+        bot1.text = findViewById(R.id.timer_bot_sum1);
+        bot2.text = findViewById(R.id.timer_bot_sum2);
+
 
         MyModel model = new ViewModelProvider(this).get(MyModel.class);
 
-        model.getTop().observe(this, new Observer<Lane>() {
-            @Override
-            public void onChanged(Lane lane) {
-                setImageSum(topSum1, lane.getSum1());
-                setImageSum(topSum2, lane.getSum2());
-            }
+        model.getTop().observe(this, lane -> {
+            setImageSum(top1.image, lane.getSum1());
+            setImageSum(top2.image, lane.getSum2());
         });
-        model.getJgl().observe(this, new Observer<Lane>() {
-            @Override
-            public void onChanged(Lane lane) {
-                setImageSum(jungleSum1, lane.getSum1());
-                setImageSum(jungleSum2, lane.getSum2());
-            }
+        model.getJgl().observe(this, lane -> {
+            setImageSum(jungle1.image, lane.getSum1());
+            setImageSum(jungle2.image, lane.getSum2());
         });
-        model.getMid().observe(this, new Observer<Lane>() {
-            @Override
-            public void onChanged(Lane lane) {
-                setImageSum(midSum1, lane.getSum1());
-                setImageSum(midSum2, lane.getSum2());
-            }
+        model.getMid().observe(this, lane -> {
+            setImageSum(mid1.image, lane.getSum1());
+            setImageSum(mid2.image, lane.getSum2());
         });
-        model.getSup().observe(this, new Observer<Lane>() {
-            @Override
-            public void onChanged(Lane lane) {
-                setImageSum(supSum1, lane.getSum1());
-                setImageSum(supSum2, lane.getSum2());
-            }
+        model.getSup().observe(this, lane -> {
+            setImageSum(sup1.image, lane.getSum1());
+            setImageSum(sup2.image, lane.getSum2());
         });
-        model.getBot().observe(this, new Observer<Lane>() {
-            @Override
-            public void onChanged(Lane lane) {
-                setImageSum(botSum1, lane.getSum1());
-                setImageSum(botSum2, lane.getSum2());
-            }
+        model.getBot().observe(this, lane -> {
+            setImageSum(bot1.image, lane.getSum1());
+            setImageSum(bot2.image, lane.getSum2());
         });
 
-        topSum1.setOnLongClickListener(ImageLongClickListener());
-        topSum2.setOnLongClickListener(ImageLongClickListener());
-        jungleSum1.setOnLongClickListener(ImageLongClickListener());
-        jungleSum2.setOnLongClickListener(ImageLongClickListener());
-        midSum1.setOnLongClickListener(ImageLongClickListener());
-        midSum2.setOnLongClickListener(ImageLongClickListener());
-        supSum1.setOnLongClickListener(ImageLongClickListener());
-        supSum2.setOnLongClickListener(ImageLongClickListener());
-        botSum1.setOnLongClickListener(ImageLongClickListener());
-        botSum2.setOnLongClickListener(ImageLongClickListener());
+        //Long Click Listeners
+        top1.image.setOnLongClickListener(ImageLongClickListener(top1));
+        top2.image.setOnLongClickListener(ImageLongClickListener(top2));
+        jungle1.image.setOnLongClickListener(ImageLongClickListener(jungle1));
+        jungle2.image.setOnLongClickListener(ImageLongClickListener(jungle2));
+        mid1.image.setOnLongClickListener(ImageLongClickListener(mid1));
+        mid2.image.setOnLongClickListener(ImageLongClickListener(mid2));
+        sup1.image.setOnLongClickListener(ImageLongClickListener(sup1));
+        sup2.image.setOnLongClickListener(ImageLongClickListener(sup2));
+        bot1.image.setOnLongClickListener(ImageLongClickListener(bot1));
+        bot2.image.setOnLongClickListener(ImageLongClickListener(bot2));
+
+//        Click Listeners
+        setOnClickListener(top1);
+        setOnClickListener(top2);
+        setOnClickListener(jungle1);
+        setOnClickListener(jungle2);
+        setOnClickListener(mid1);
+        setOnClickListener(mid2);
+        setOnClickListener(sup1);
+        setOnClickListener(sup2);
+        setOnClickListener(bot1);
+        setOnClickListener(bot2);
 
     }
 
+    private void setOnClickListener(SumImage sumImage) {
+        sumImage.image.setOnClickListener(view -> {
+            ImageView image = (ImageView) view;
+            image.setColorFilter(Color.GRAY, PorterDuff.Mode.DARKEN);
+            image.setClickable(false);
+            image.setLongClickable(false);
+            if(sumImage.timer == null || sumImage.isFinished)
+                sumImage.isFinished = false;
+                sumImage.timer = new CountDownTimer(sumImage.sum.getCD() * 1000, 10) {
+
+                    public void onTick(long millisUntilFinished) {
+                        sumImage.text.setText(new SimpleDateFormat(millisUntilFinished < 60000 ? "ss:SS" : "mm:ss:SS").format(new Date(millisUntilFinished)));
+                    }
+
+                    public void onFinish() {
+                        sumImage.text.setText("");
+                        ((ImageView) view).clearColorFilter();
+                        ((ImageView) view).setClickable(true);
+                        sumImage.isFinished = true;
+                    }
+                }.start();
+        });
+    }
+
     @NonNull
-    private View.OnLongClickListener ImageLongClickListener() {
+    private View.OnLongClickListener ImageLongClickListener(SumImage sumImage) {
         return new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
@@ -137,12 +183,10 @@ public class MainActivity extends AppCompatActivity {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
                 builder.setTitle("Pick a summoner spell:");
-                builder.setAdapter(adapter, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int which) {
-                        // The user clicked on l_finalArray[which]
-                        setImageSum((ImageView) view, Sum.valueOf(l_finalArray[which]));
-                    }
+                builder.setAdapter(adapter, (dialogInterface, which) -> {
+                    // The user clicked on l_finalArray[which]
+                    setImageSum((ImageView) view, Sum.valueOf(l_finalArray[which]));
+                    sumImage.sum = Sum.valueOf(l_finalArray[which]);
                 });
                 builder.show();
                 return true;
@@ -151,6 +195,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setImageSum(ImageView p_image, Sum p_spell){
+        if (p_image == null){
+            return;
+        }
         switch (p_spell){
             case HEAL:
                 p_image.setImageResource(R.drawable.heal__28summoner_spell_29);

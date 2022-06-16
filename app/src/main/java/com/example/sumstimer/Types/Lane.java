@@ -10,6 +10,11 @@ public class Lane {
         sum1 = sum2 = Sum.FLASH;
     }
 
+    public Lane(LaneType laneType) {
+        this.laneType = laneType;
+        sum1 = sum2 = Sum.FLASH;
+    }
+
     public LaneType getLaneType() {
         return laneType;
     }
